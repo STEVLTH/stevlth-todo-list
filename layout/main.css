@@ -29,3 +29,20 @@ h1 {
     padding: 20px 0 20px 0;
 }
 
+/* Add ToDo item */
+
+.todo-add {
+    display: flex;
+    align-content: center;
+    padding: 60px 0 30px 0;
+}
+
+.todo-input-name {
+    width: 100%;
+    padding: 15px;
+}
+
+.todo-add-button {
+    width: 200px;
+    margin-left: 20px;
+}
