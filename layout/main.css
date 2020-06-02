@@ -1,21 +1,18 @@
-/*CSS RESET*/
+/* IMPORT FONTS */
 
-*
-{
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 /* BODY */
 
 body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     background: #222;
-    font-family: "Roboto Thin";
     color: white;
 }
 
 .wrapper {
-    margin:0 auto;
+    margin: 0 auto;
     width: 960px;
 }
 
@@ -25,8 +22,15 @@ header {
     background: darkorange;
 }
 
-h1 {
-    padding: 20px 0 20px 0;
+.app-name {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.app-version {
+    font-size: 12px;
 }
 
 /* ADD TODO ITEM */
@@ -34,38 +38,32 @@ h1 {
 .todo-add-form {
     display: flex;
     align-content: center;
-    padding: 60px 0 30px 0;
+    padding: 60px 0 30px;
 }
 
 .todo-input-name {
     width: 100%;
     border: none;
-    border-left-width: 0;
-    border-left-style: solid;
-    border-left-color: darkorange;
     padding: 15px 20px;
     font-size: 18px;
+    font-weight: 300;
     background-color: #444;
     color: white;
     transition-duration: 0.5s;
 }
 
 .todo-input-name:hover {
-    border-left-width: 4px;
-    border-bottom-color: darkorange;
-    padding-left: 16px;
     background-color: #555;
 }
 
 .todo-input-name::placeholder {
+    font-weight: 200;
     color: darkgray;
 }
 
 .todo-input-name:focus {
-    border-left-width: 4px;
-    border-bottom-color: darkorange;
-    padding-left: 16px;
-    color: white;
+    background-color: #fff;
+    color: #111;
     outline: none;
 }
 
@@ -75,6 +73,7 @@ h1 {
     margin-left: 10px;
     padding: 16px 50px;
     font-size: 16px;
+    font-weight: 400;
     text-align: center;
     text-decoration: none;
     background-color: #444; /* Green */
@@ -89,13 +88,11 @@ h1 {
 
 .todo-add-button:hover {
     border: none;
-    padding: 16px 70px;
     background-color: darkorange;
     cursor: pointer;
 }
 
 .todo-add-button:active {
-    border: none;
     background-color: #333;
     transition-duration: 0.1s;
 }
@@ -103,15 +100,15 @@ h1 {
 /* TODO LIST */
 
 .todo-list {
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
 
 .todo-list-item {
     display: flex;
     align-items: center;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: #444;
+    border-bottom: 2px solid #444;
     padding: 0 20px;
     transition-duration: 0.5s;
 }
@@ -130,7 +127,8 @@ h1 {
 }
 
 .todo-checkbox {
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 
 .todo-checkbox + label {
@@ -154,7 +152,7 @@ h1 {
     transition-duration: 0.5s;
 }
 
-.todo-checkbox:hover + label::before {
+.todo-checkbox:hover + label::before, .todo-checkbox:focus + label::before {
     border-color: darkorange;
 }
 
@@ -190,7 +188,7 @@ h1 {
     transition-duration: 0.5s;
 }
 
-.action-button:before {
+.action-button::before {
     position: absolute;
     height: 200%;
     width: 200%;
@@ -205,7 +203,7 @@ h1 {
     transition-duration: 0.5s;
 }
 
-.action-button:hover:before {
+.action-button:hover::before {
     transform: rotate(180deg);
 }
 
@@ -218,24 +216,28 @@ h1 {
     outline: none;
 }
 
-.action-button:active:before {
+.action-button:focus::before{
+    background-color: darkorange;
+}
+
+.action-button:active::before {
     border: none;
     background-color: #333;
     transition-duration: 0.1s;
 }
 
-.todo-remove-button:before {
+.todo-remove-button::before {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3e%3cpath fill='%23222' d='M15 1.4L13.6 0 7.5 6.1 1.4 0 0 1.4l6.1 6.1L0 13.6 1.4 15l6.1-6.1 6.1 6.1 1.4-1.4-6.1-6.1z'/%3e%3c/svg%3e");
 }
 
-.todo-edit-button:before {
+.todo-edit-button::before {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17.6 17.6'%3e%3cpath fill='%23222' d='M4.9 15.4l-2.8-2.8L.7 14 0 17.6l3.5-.8zM11.3 3.45l2.83 2.82-8.48 8.49-2.83-2.83zM17 .6c.8.8.8 2 0 2.8l-2.1 2.1L12 2.7 14.1.6c.8-.8 2.1-.8 2.9 0z'/%3e%3c/svg%3e");
 }
 
-.todo-remove-button:hover:before {
+.todo-remove-button:hover::before {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3e%3cpath fill='%23ff9900' d='M15 1.4L13.6 0 7.5 6.1 1.4 0 0 1.4l6.1 6.1L0 13.6 1.4 15l6.1-6.1 6.1 6.1 1.4-1.4-6.1-6.1z'/%3e%3c/svg%3e");
 }
 
-.todo-edit-button:hover:before {
+.todo-edit-button:hover::before {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17.6 17.6'%3e%3cpath fill='%23ff9900' d='M4.9 15.4l-2.8-2.8L.7 14 0 17.6l3.5-.8zM11.3 3.45l2.83 2.82-8.48 8.49-2.83-2.83zM17 .6c.8.8.8 2 0 2.8l-2.1 2.1L12 2.7 14.1.6c.8-.8 2.1-.8 2.9 0z'/%3e%3c/svg%3e");
 }
