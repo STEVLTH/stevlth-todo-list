@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>STEVLTH TODO list App</title>
     <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
 
-<header>
+<header class="header">
     <div class="wrapper">
         <h1 class="app-name">STEVLTH To Do app <span class="app-version">v 0.1.1</span></h1>
     </div>
@@ -20,15 +21,15 @@
 <main class="todo-body">
     <div class="wrapper">
 
-        <form class="todo-add-form" action="" method="post">
+        <form class="todo-add-form">
             <input class="todo-input-name" type="text" placeholder="Enter an item name">
-            <input class="todo-add-button" type="submit" value="ADD">
+            <button class="todo-add-button" type="submit">ADD</button>
         </form>
 
         <ul class="todo-list">
-            <li  class="todo-list-item">
+            <li class="todo-list-item">
                 <div class="todo-label">
-                    <input class="todo-checkbox" type="checkbox" id="todo-checkbox-1">
+                    <input class="todo-checkbox visually-hidden" type="checkbox" id="todo-checkbox-1">
                     <label class="todo-item-name" for="todo-checkbox-1">Wakeup bitch!</label>
                 </div>
                 <div class="todo-actions">
@@ -36,9 +37,9 @@
                     <button class="todo-remove-button action-button"></button>
                 </div>
             </li>
-            <li  class="todo-list-item">
+            <li class="todo-list-item">
                 <div class="todo-label">
-                    <input class="todo-checkbox" type="checkbox" id="todo-checkbox-2" checked>
+                    <input class="todo-checkbox visually-hidden" type="checkbox" id="todo-checkbox-2" checked>
                     <label class="todo-item-name" for="todo-checkbox-2">Lorem ipsum dolor sit amet.</label>
                 </div>
                 <div class="todo-actions">
@@ -46,10 +47,14 @@
                     <button class="todo-remove-button action-button"></button>
                 </div>
             </li>
-            <li  class="todo-list-item">
+            <li class="todo-list-item">
                 <div class="todo-label">
-                    <input class="todo-checkbox" type="checkbox" id="todo-checkbox-3">
-                    <label class="todo-item-name" for="todo-checkbox-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore ea exercitationem ipsa necessitatibus obcaecati odit officiis qui reprehenderit sed!</label>
+                    <input class="todo-checkbox visually-hidden" type="checkbox" id="todo-checkbox-3">
+                    <label class="todo-item-name" for="todo-checkbox-3">
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Distinctio dolore ea exercitationem ipsa necessitatibus obcaecati odit
+                        officiis qui reprehenderit sed!
+                    </label>
                 </div>
                 <div class="todo-actions">
                     <button class="todo-edit-button action-button"></button>
