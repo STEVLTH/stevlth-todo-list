@@ -15,13 +15,13 @@ body {
 }
 
 .wrapper {
-    width: 960px;
     margin:0 auto;
+    width: 960px;
 }
 
 /* HEADER */
 
-.header {
+header {
     background: darkorange;
 }
 
@@ -31,32 +31,30 @@ h1 {
 
 /* ADD TODO ITEM */
 
-.todo-add {
+.todo-add-form {
     display: flex;
     align-content: center;
     padding: 60px 0 30px 0;
 }
 
 .todo-input-name {
+    width: 100%;
     border: none;
-    border-left-style: inset;
+    border-left-width: 0;
     border-left-style: solid;
     border-left-color: darkorange;
-    border-left-width: 0;
-    color: white;
+    padding: 15px 20px;
     font-size: 18px;
     background-color: #444;
-    width: 100%;
-    padding: 15px 20px;
+    color: white;
     transition-duration: 0.5s;
 }
 
 .todo-input-name:hover {
-    background-color: #555;
-    border-bottom-color: darkorange;
     border-left-width: 4px;
+    border-bottom-color: darkorange;
     padding-left: 16px;
-    /*padding-bottom: 11px;*/
+    background-color: #555;
 }
 
 .todo-input-name::placeholder {
@@ -64,23 +62,23 @@ h1 {
 }
 
 .todo-input-name:focus {
-    color: white;
-    border-bottom-color: darkorange;
     border-left-width: 4px;
+    border-bottom-color: darkorange;
     padding-left: 16px;
+    color: white;
     outline: none;
 }
 
 .todo-add-button {
-    margin-left: 10px;
-    background-color: #444; /* Green */
+    display: inline-block;
     border: none;
-    color: white;
+    margin-left: 10px;
     padding: 16px 50px;
+    font-size: 16px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    background-color: #444; /* Green */
+    color: white;
     transition-duration: 0.5s;
 }
 
@@ -91,8 +89,8 @@ h1 {
 
 .todo-add-button:hover {
     border: none;
-    background-color: darkorange;
     padding: 16px 70px;
+    background-color: darkorange;
     cursor: pointer;
 }
 
@@ -111,11 +109,20 @@ h1 {
 .todo-list-item {
     display: flex;
     align-items: center;
-    border-bottom-color: #444;
     border-bottom-width: 2px;
     border-bottom-style: solid;
+    border-bottom-color: #444;
     padding: 0 20px;
     transition-duration: 0.5s;
+}
+
+.todo-label {
+    display: flex;
+    width: 100%;
+}
+
+.todo-actions {
+    display: flex;
 }
 
 .todo-list-item:hover {
@@ -124,84 +131,101 @@ h1 {
 
 .todo-checkbox {
     display: none;
-    z-index: -1;
-    opacity: 1;
 }
 
-.todo-checkbox+label {
+.todo-checkbox + label {
     display: inline-flex;
     align-items: center;
     user-select: none;
 }
-.todo-checkbox+label::before {
-    content: '';
+.todo-checkbox + label::before {
     display: inline-block;
-    width: 24px;
-    height: 24px;
     flex-shrink: 0;
     flex-grow: 0;
+    width: 24px;
+    height: 24px;
     border: 4px solid #444;
     border-radius: 16px;
     margin-right: 20px;
-    background-repeat: no-repeat;
+    content: '';
     background-position: center center;
     background-size: 50% 50%;
+    background-repeat: no-repeat;
     transition-duration: 0.5s;
 }
 
-.todo-checkbox:hover+label::before {
+.todo-checkbox:hover + label::before {
     border-color: darkorange;
 }
 
-.todo-checkbox:checked+label::before {
+.todo-checkbox:checked + label::before {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23ff9900' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 }
 
 .todo-checkbox:checked+.todo-item-name {
-    color: darkgray;
-    text-decoration-color: darkgray;
     text-decoration-line: line-through;
+    text-decoration-color: darkgray;
+    color: darkgray;
 }
 
 .todo-item-name {
+    width: 100%;
+    align-self: center;
+    padding: 20px 0;
+    font-size: 20px;
     text-decoration-style: solid;
     text-decoration-color: gray;
-    width: 100%;
-    font-size: 20px;
-    align-self: center;
-    flex-shrink: 1;
-    padding: 20px 0;
     cursor: pointer;
     transition-duration: 0.5s;
 }
 
-.todo-edit-button,
-.todo-remove-button {
+.action-button {
     position: relative;
-    overflow: hidden;
-    background-color: rgba(20, 20, 20, 0);
     height: 40px;
     width: 40px;
-    flex-shrink: 0;
     border: none;
     margin-left: 10px;
+    overflow: hidden;
+    background-color: rgba(20, 20, 20, 0);
     transition-duration: 0.5s;
 }
 
-.todo-remove-button:before, .todo-edit-button:before {
-    content: "";
+.action-button:before {
     position: absolute;
-    z-index: -1;
-    width: 200%;
     height: 200%;
+    width: 200%;
     left: -50%;
     top: -50%;
-    background-color: #444;
-    background-size: 25%;
+    z-index: -1;
+    content: "";
     background-position: center;
+    background-size: 25%;
     background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3e%3cpath fill='%23222' d='M15 1.4L13.6 0 7.5 6.1 1.4 0 0 1.4l6.1 6.1L0 13.6 1.4 15l6.1-6.1 6.1 6.1 1.4-1.4-6.1-6.1z'/%3e%3c/svg%3e");
+    background-color: #444;
     transition-duration: 0.5s;
+}
+
+.action-button:hover:before {
+    transform: rotate(180deg);
+}
+
+.action-button:hover {
+    border: none;
+    cursor: pointer;
+}
+
+.action-button:focus {
+    outline: none;
+}
+
+.action-button:active:before {
+    border: none;
+    background-color: #333;
+    transition-duration: 0.1s;
+}
+
+.todo-remove-button:before {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3e%3cpath fill='%23222' d='M15 1.4L13.6 0 7.5 6.1 1.4 0 0 1.4l6.1 6.1L0 13.6 1.4 15l6.1-6.1 6.1 6.1 1.4-1.4-6.1-6.1z'/%3e%3c/svg%3e");
 }
 
 .todo-edit-button:before {
@@ -210,25 +234,8 @@ h1 {
 
 .todo-remove-button:hover:before {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3e%3cpath fill='%23ff9900' d='M15 1.4L13.6 0 7.5 6.1 1.4 0 0 1.4l6.1 6.1L0 13.6 1.4 15l6.1-6.1 6.1 6.1 1.4-1.4-6.1-6.1z'/%3e%3c/svg%3e");
-    transform: rotate(180deg);
 }
 
 .todo-edit-button:hover:before {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17.6 17.6'%3e%3cpath fill='%23ff9900' d='M4.9 15.4l-2.8-2.8L.7 14 0 17.6l3.5-.8zM11.3 3.45l2.83 2.82-8.48 8.49-2.83-2.83zM17 .6c.8.8.8 2 0 2.8l-2.1 2.1L12 2.7 14.1.6c.8-.8 2.1-.8 2.9 0z'/%3e%3c/svg%3e");
-    transform: rotate(180deg);
-}
-
-.todo-remove-button:focus, .todo-edit-button:focus {
-    outline: none;
-}
-
-.todo-remove-button:hover, .todo-edit-button:hover {
-    border: none;
-    cursor: pointer;
-}
-
-.todo-remove-button:active:before, .todo-edit-button:active:before {
-    border: none;
-    background-color: #333;
-    transition-duration: 0.1s;
 }

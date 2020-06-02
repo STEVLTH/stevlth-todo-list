@@ -10,43 +10,55 @@
 </head>
 <body>
 
-<div class="header">
+<header>
     <div class="wrapper">
-        <h1 class="caption">STEVLTH ToDo v0.000001</h1>
+        <h1 class="caption">STEVLTH ToDo v0.1</h1>
     </div>
-</div>
+</header>
 
-<div class="todo-body">
+<main class="todo-body">
     <div class="wrapper">
 
-        <div class="todo-add">
-            <input type="text" name="todo-input-name" id="" class="todo-input-name" placeholder="Enter an item name">
-            <button class="todo-add-button">ADD</button>
-        </div>
+        <form class="todo-add-form" action="" method="post">
+            <input class="todo-input-name" type="text" name="todo-input-name" id="" placeholder="Enter an item name">
+            <input class="todo-add-button" type="submit" value="ADD">
+        </form>
 
         <ul class="todo-list">
             <li  class="todo-list-item">
-                <input type="checkbox" id="todo-checkbox-1" value="todo-checkbox-1" class="todo-checkbox">
-                <label for="todo-checkbox-1" class="todo-item-name">Wakeup bitch!</label>
-                <button class="todo-edit-button"></button>
-                <button class="todo-remove-button"></button>
+                <div class="todo-label">
+                    <input class="todo-checkbox" type="checkbox" id="todo-checkbox-1">
+                    <label class="todo-item-name" for="todo-checkbox-1">Wakeup bitch!</label>
+                </div>
+                <div class="todo-actions">
+                    <button class="todo-edit-button action-button"></button>
+                    <button class="todo-remove-button action-button"></button>
+                </div>
             </li>
             <li  class="todo-list-item">
-                <input type="checkbox" id="todo-checkbox-2" value="todo-checkbox-2" class="todo-checkbox" checked>
-                <label for="todo-checkbox-2" class="todo-item-name">Lorem ipsum dolor sit amet.</label>
-                <button class="todo-edit-button"></button>
-                <button class="todo-remove-button"></button>
+                <div class="todo-label">
+                    <input class="todo-checkbox" type="checkbox" id="todo-checkbox-2" checked>
+                    <label class="todo-item-name" for="todo-checkbox-2">Lorem ipsum dolor sit amet.</label>
+                </div>
+                <div class="todo-actions">
+                    <button class="todo-edit-button action-button"></button>
+                    <button class="todo-remove-button action-button"></button>
+                </div>
             </li>
             <li  class="todo-list-item">
-                <input type="checkbox" id="todo-checkbox-3" value="todo-checkbox-3" class="todo-checkbox">
-                <label for="todo-checkbox-3" class="todo-item-name">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore ea exercitationem ipsa necessitatibus obcaecati odit officiis qui reprehenderit sed!</label>
-                <button class="todo-edit-button"></button>
-                <button class="todo-remove-button"></button>
+                <div class="todo-label">
+                    <input class="todo-checkbox" type="checkbox" id="todo-checkbox-3">
+                    <label class="todo-item-name" for="todo-checkbox-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore ea exercitationem ipsa necessitatibus obcaecati odit officiis qui reprehenderit sed!</label>
+                </div>
+                <div class="todo-actions">
+                    <button class="todo-edit-button action-button"></button>
+                    <button class="todo-remove-button action-button"></button>
+                </div>
             </li>
         </ul>
 
     </div>
-</div>
+</main>
 
 </body>
 </html>
