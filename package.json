@@ -19,6 +19,6 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-concat-css": "^3.1.0",
-    "gulp-dart-sass": "^1.0.2",
+    "gulp-dart-sass": "^1.0.2"
   }
 }
