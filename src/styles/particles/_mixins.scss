@@ -1,0 +1,5 @@
+@import "../variables";
+
+@mixin wrapper {
+  width: $content-width;
+}

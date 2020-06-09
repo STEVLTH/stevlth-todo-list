@@ -1,0 +1,15 @@
+$content-width: 960px;
+
+$color-bg: #191919;
+
+$color-accent-h: 193;
+$color-accent-s: 100%;
+$color-accent-l: 50%;
+
+$color-accent: hsl($color-accent-h, $color-accent-l, $color-accent-l);
+$color-focus: hsl($color-accent-h, $color-accent-l, $color-accent-l * 0.5);
+$color-button--default: #333;
+$color-button--disabled: #222;
+
+$color-text--main: rgb(200, 200, 200);
+$color-text--watermark: #666;

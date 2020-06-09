@@ -1,69 +1,121 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>STEVLTH TODO list App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./bundle.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>TODO list App</title>
 
-<header class="header">
-    <div class="wrapper">
-        <h1 class="app-name">STEVLTH To Do app <span class="app-version">v 0.1.1</span></h1>
-    </div>
-</header>
+        <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<main class="todo-body">
-    <div class="wrapper">
+        <link rel="stylesheet" href="./bundle.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="app-logo" data-text="To Do app" data-text2=">ERROR">
+                To Do app
+            </div>
+        </header>
 
-        <form class="todo-add-form">
-            <input class="todo-input-name" type="text" placeholder="Enter an item name">
-            <button class="todo-add-button" type="submit">ADD</button>
-        </form>
+        <main class="main-content">
+            <form class="search-form">
+                <input class="search-form__input-text" type="text" placeholder="What do you need to do?">
+                <button class="search-form__submit-button search-form__submit-button--disabled action-button" type="submit" disabled>
 
-        <ul class="todo-list">
-            <li class="todo-list-item">
-                <div class="todo-label">
-                    <input class="todo-checkbox visually-hidden" type="checkbox" id="todo-checkbox-1">
-                    <label class="todo-item-name" for="todo-checkbox-1">Wakeup bitch!</label>
-                </div>
-                <div class="todo-actions">
-                    <button class="todo-edit-button action-button"></button>
-                    <button class="todo-remove-button action-button"></button>
-                </div>
-            </li>
-            <li class="todo-list-item">
-                <div class="todo-label">
-                    <input class="todo-checkbox visually-hidden" type="checkbox" id="todo-checkbox-2" checked>
-                    <label class="todo-item-name" for="todo-checkbox-2">Lorem ipsum dolor sit amet.</label>
-                </div>
-                <div class="todo-actions">
-                    <button class="todo-edit-button action-button"></button>
-                    <button class="todo-remove-button action-button"></button>
-                </div>
-            </li>
-            <li class="todo-list-item">
-                <div class="todo-label">
-                    <input class="todo-checkbox visually-hidden" type="checkbox" id="todo-checkbox-3">
-                    <label class="todo-item-name" for="todo-checkbox-3">
-                        Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit. Distinctio dolore ea exercitationem ipsa necessitatibus obcaecati odit
-                        officiis qui reprehenderit sed!
-                    </label>
-                </div>
-                <div class="todo-actions">
-                    <button class="todo-edit-button action-button"></button>
-                    <button class="todo-remove-button action-button"></button>
-                </div>
-            </li>
-        </ul>
+                    <svg class="action-button__icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25">
+                        <path d="M25 12.5a2 2 0 00-2-2h-8.5V2a2 2 0 00-2-2 2 2 0 00-2 2v8.5H2a2 2 0 00-2 2c0 1.1.9 2 2 2h8.5V23c0 1.1.9 2 2 2a2 2 0 002-2v-8.5H23a2 2 0 002-2z"/>
+                    </svg>
 
-    </div>
-</main>
+                </button>
+            </form>
 
-</body>
+            <ul class="todo-list">
+                <li class="todo-list__item">
+                    <div class="todo-list__label">
+                        <input class="todo-list__checkbox todo-list__checkbox--hidden" type="checkbox" id="todo-list__checkbox-1">
+                        <label class="todo-list__item-name" for="todo-list__checkbox-1">
+                            Wakeup bitch!
+                        </label>
+                    </div>
+                    <div class="todo-list__actions">
+                        <button class="action-button action-button--size">
+
+                            <svg class="action-button__icon" xmlns="http://www.w3.org/2000/svg" width="18.3" height="18.3">
+                                <path  d="M4.9 16.1l-2.8-2.8-1.4 1.4-.7 3.6 3.5-.7zM12 3.4l2.8 2.8-9.2 9.2-2.8-2.8zM17.7.6c.8.8.8 2 0 2.8l-2.1 2.1-2.8-2.8L14.9.6c.7-.8 2-.8 2.8 0z"/>
+                            </svg>
+
+                        </button>
+                        <button class="action-button action-button--size">
+
+                            <svg class="action-button__icon" xmlns="http://www.w3.org/2000/svg" width="18.8" height="18.8">
+                                <path d="M18.3 18.3c.8-.8.8-2 0-2.8l-6-6 6-6c.8-.8.8-2 0-2.8a2 2 0 00-2.8 0l-6 6-6-6A2 2 0 00.7.7a2 2 0 000 2.8l6 6-6 6a2 2 0 000 2.8c.8.8 2 .8 2.8 0l6-6 6 6c.7.7 2 .7 2.8 0z"/>
+                            </svg>
+
+                        </button>
+                    </div>
+                </li>
+                <li class="todo-list__item">
+                    <div class="todo-list__label">
+                        <input class="todo-list__checkbox todo-list__checkbox--hidden" type="checkbox" id="todo-list__checkbox-2" checked>
+                        <label class="todo-list__item-name" for="todo-list__checkbox-2">
+                            Lorem ipsum dolor sit amet.
+                        </label>
+                    </div>
+                    <div class="todo-list__actions">
+                        <button class="action-button action-button--size">
+
+                            <svg class="action-button__icon" xmlns="http://www.w3.org/2000/svg" width="18.3" height="18.3">
+                                <path  d="M4.9 16.1l-2.8-2.8-1.4 1.4-.7 3.6 3.5-.7zM12 3.4l2.8 2.8-9.2 9.2-2.8-2.8zM17.7.6c.8.8.8 2 0 2.8l-2.1 2.1-2.8-2.8L14.9.6c.7-.8 2-.8 2.8 0z"/>
+                            </svg>
+
+                        </button>
+                        <button class="action-button action-button--size">
+
+                            <svg class="action-button__icon" xmlns="http://www.w3.org/2000/svg" width="18.8" height="18.8">
+                                <path d="M18.3 18.3c.8-.8.8-2 0-2.8l-6-6 6-6c.8-.8.8-2 0-2.8a2 2 0 00-2.8 0l-6 6-6-6A2 2 0 00.7.7a2 2 0 000 2.8l6 6-6 6a2 2 0 000 2.8c.8.8 2 .8 2.8 0l6-6 6 6c.7.7 2 .7 2.8 0z"/>
+                            </svg>
+
+                        </button>
+                    </div>
+                </li>
+                <li class="todo-list__item">
+                    <div class="todo-list__label">
+                        <input class="todo-list__checkbox todo-list__checkbox--hidden" type="checkbox" id="todo-list__checkbox-3">
+                        <label class="todo-list__item-name" for="todo-list__checkbox-3">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Distinctio dolore ea exercitationem ipsa necessitatibus obcaecati odit
+                            officiis qui reprehenderit sed!
+                        </label>
+                    </div>
+                    <div class="todo-list__actions">
+                        <button class="action-button action-button--size">
+
+                            <svg class="action-button__icon" xmlns="http://www.w3.org/2000/svg" width="18.3" height="18.3">
+                                <path  d="M4.9 16.1l-2.8-2.8-1.4 1.4-.7 3.6 3.5-.7zM12 3.4l2.8 2.8-9.2 9.2-2.8-2.8zM17.7.6c.8.8.8 2 0 2.8l-2.1 2.1-2.8-2.8L14.9.6c.7-.8 2-.8 2.8 0z"/>
+                            </svg>
+
+                        </button>
+                        <button class="action-button action-button--size">
+
+                            <svg class="action-button__icon" xmlns="http://www.w3.org/2000/svg" width="18.8" height="18.8">
+                                <path d="M18.3 18.3c.8-.8.8-2 0-2.8l-6-6 6-6c.8-.8.8-2 0-2.8a2 2 0 00-2.8 0l-6 6-6-6A2 2 0 00.7.7a2 2 0 000 2.8l6 6-6 6a2 2 0 000 2.8c.8.8 2 .8 2.8 0l6-6 6 6c.7.7 2 .7 2.8 0z"/>
+                            </svg>
+
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </main>
+
+        <footer class="footer">
+            <div class="app-logo app-logo--watermark">
+                To Do app
+            </div>
+            <div class="app-version">
+                v 0.1.1
+            </div>
+        </footer>
+    </body>
 </html>

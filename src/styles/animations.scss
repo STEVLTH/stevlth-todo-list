@@ -1,0 +1,19 @@
+@keyframes fade-in{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes slide-bottom{
+  0% {margin-top: -10%}
+  100% {margin-top: 0}
+}
+@keyframes blur-in{
+  0% {filter: blur(128px);}
+  40% {filter: blur(0);}
+  50% {filter: blur(64px);}
+  60% {filter: blur(8px);}
+  70% {filter: blur(32px);}
+  80% {filter: blur(0);}
+  90% {filter: blur(48px);}
+  100% {filter: blur(0);}
+}
