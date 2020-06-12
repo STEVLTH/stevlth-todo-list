@@ -1,16 +1,17 @@
 @import "./normalize";
 
-@import "./variables";
+@import "variables";
 
-@import "./particles/mixins";
+@import "./mixins";
+
 @import "./particles/header";
 @import "./particles/search-form";
 @import "./particles/todo-list";
 @import "./particles/footer";
 
 // just for fun
-@import "./particles/effect-background-noise";
-@import "./particles/effect-glitch";
+@import "animations/effect-background-noise";
+@import "animations/effect-glitch";
 
 
 
