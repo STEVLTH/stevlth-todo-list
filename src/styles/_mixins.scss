@@ -3,3 +3,8 @@
 @mixin wrapper {
   width: $content-width;
 }
+
+@mixin clear-borders {
+  border: none;
+  outline: none;
+}

@@ -7,44 +7,15 @@
   padding-top: 40px;
   align-content: center;
 
-  &__input-text {
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid $color-button--default;
-    padding: 15px 20px;
-    border-radius: 8px 0 0 8px;
-    font-size: 18px;
-    font-weight: 300;
-    background-color: $color-button--default;
-    color: white;
-    outline: none;
-    transition: background-color 0.5s;
-
-    &:hover {
-      background-color: #555;
-    }
-
-    &:focus {
-      background-color: #333;
-      border-bottom: 2px solid $color-accent;
-      filter: brightness(1.2);
-    }
-
-    &::placeholder {
-      font-weight: 200;
-      color: darkgray;
-    }
-  }
-
   &__submit-button {
-    border: none;
+    @include clear-borders;
+
     border-radius: 0 8px 8px 0;
     margin-left: 10px;
     padding: 0 50px;
     background-color: $color-button--default;
     color: white;
     cursor: pointer;
-    outline: none;
     transition: background-color 0.5s;
 
     &:focus {
@@ -68,5 +39,34 @@
         fill: $color-bg !important;
       }
     }
+  }
+}
+
+.input-text {
+  @include clear-borders;
+
+  width: 100%;
+  border-bottom: 2px solid $color-button--default;
+  padding: 15px 20px;
+  border-radius: 8px 0 0 8px;
+  font-size: 18px;
+  font-weight: 300;
+  background-color: $color-button--default;
+  color: white;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: #555;
+  }
+
+  &:focus {
+    background-color: #333;
+    border-bottom: 2px solid $color-accent;
+    filter: brightness(1.2);
+  }
+
+  &::placeholder {
+    font-weight: 200;
+    color: darkgray;
   }
 }
