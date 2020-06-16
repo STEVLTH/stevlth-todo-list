@@ -30,22 +30,27 @@
   display: flex;
 }
 
-.todo-list__checkbox--hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-}
+.custom-checkbox {
+  @include visually_hidden;
 
-.todo-list__checkbox {
-  & + .todo-list__item-name {
+  &__label {
+    width: 100%;
+    align-self: center;
+    padding: 20px 0;
+    font-size: 20px;
+    text-decoration-style: solid;
+    text-decoration-color: gray;
+    cursor: pointer;
+    transition-duration: 0.5s;
+  }
+
+  & + &__label {
     display: inline-flex;
     align-items: center;
     user-select: none;
   }
 
-  & + .todo-list__item-name::before {
+  & + &__label::before {
     $size: 12px;
     $border: 4px;
 
@@ -62,37 +67,25 @@
 
   }
 
-  &:hover + .todo-list__item-name::before {
+  &:hover + &__label::before {
     border-color: $color-accent;
   }
 
-  &:focus + .todo-list__item-name::before {
+  &:focus + &__label::before {
     //border-color: $color-focus;
     filter: brightness(1.5);
   }
 
-  &:checked + .todo-list__item-name::before {
+  &:checked + &__label::before {
     border-color: $color-accent;
   }
 
-  &:checked + .todo-list__item-name {
+  &:checked + &__label {
     text-decoration-line: line-through;
     text-decoration-color: darkgray;
     color: darkgray;
   }
 
-}
-
-
-.todo-list__item-name {
-  width: 100%;
-  align-self: center;
-  padding: 20px 0;
-  font-size: 20px;
-  text-decoration-style: solid;
-  text-decoration-color: gray;
-  cursor: pointer;
-  transition-duration: 0.5s;
 }
 
 .action-button {
