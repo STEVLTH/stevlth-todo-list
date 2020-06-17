@@ -1,0 +1,19 @@
+@import "../variables";
+@import "../mixins";
+
+
+
+.footer {
+  @include wrapper();
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-version {
+  padding-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-text--watermark;
+}

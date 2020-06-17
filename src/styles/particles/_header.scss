@@ -1,0 +1,23 @@
+@import "../variables";
+@import "../mixins";
+
+.header {
+  @include wrapper();
+
+  padding-top: 60px;
+}
+
+.app-logo {
+  content: attr(data-text2);
+  font-size: 48px;
+  font-weight: 500;
+  color: $color-text--main;
+
+
+
+  &--watermark {
+    font-size: 22px;
+    font-weight: 500;
+    color: $color-text--watermark;
+  }
+}

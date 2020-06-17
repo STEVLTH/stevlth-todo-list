@@ -1,0 +1,19 @@
+@import "variables";
+
+@mixin wrapper {
+  width: $content-width;
+  margin: 0 auto;
+}
+
+@mixin clear-borders {
+  border: none;
+  outline: none;
+}
+
+@mixin visually_hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
