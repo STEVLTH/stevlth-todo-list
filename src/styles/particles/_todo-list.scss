@@ -90,9 +90,6 @@
 .action-button {
   @include clear-borders;
 
-  display: flex;
-  position: relative;
-  align-content: center;
   margin-left: 10px;
   cursor: pointer;
   background-color: $color-button--default;
@@ -107,6 +104,10 @@
     transform: rotate(180deg);
   }
 
+  &--inactive:hover > &__icon {
+    fill: #555;
+  }
+
   &:focus {
     filter: brightness(1.5);
   }
@@ -115,10 +116,19 @@
     background-color: #222;
   }
 
-  &--size-m {
+  &--size-enlarged {
     height: 40px;
     width: 40px;
     border-radius: 10%;
+  }
+
+  &--inactive {
+    background-color: #222;
+
+    &:hover {
+      background-color: #333;
+      cursor: auto;
+    }
   }
 
   &__icon {
